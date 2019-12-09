@@ -1,0 +1,87 @@
+%YAML 1.1
+---
+actions:
+- action_restart_my_conv
+- action_search_cuisine
+- action_search_location
+- action_search_restaurants
+- action_send_email
+- utter_ask_cuisine
+- utter_ask_email_id
+- utter_ask_howcanhelp
+- utter_ask_location
+- utter_default
+- utter_goodbye
+- utter_greet
+- utter_price_range
+entities:
+- cuisine
+- email
+- location
+- negative
+- people
+- price
+intents:
+- restaurant_search
+- greet
+- negative
+- affirm
+- send_me_email
+- goodbye
+- stop
+slots:
+  cuisine:
+    type: text
+  email:
+    type: text
+  location:
+    type: text
+  price:
+    type: categorical
+    values:
+    - low
+    - mid
+    - high
+templates:
+  utter_ask_cuisine:
+  - buttons:
+    - payload: Chinese
+      title: Chinese
+    - payload: Mexican
+      title: Mexican
+    - payload: Italian
+      title: Italian
+    - payload: American
+      title: American
+    - payload: South Indian
+      title: South Indian
+    - payload: North Indian
+      title: North Indian
+    text: what kind of cuisine would you like?
+  utter_ask_email_id:
+  - text: Please provide your mail id if you want the results over your mail..
+  utter_ask_howcanhelp:
+  - text: how can I help you?
+  utter_ask_if_wants_mail:
+  - text: Do you want to get the top 10 results on your mail?
+  utter_ask_location:
+  - text: In what location?
+  utter_default:
+  - text: i cannot understand
+  utter_goodbye:
+  - text: goodbye :)
+  - text: Bye-bye
+  - text: Thank you, have a nice day!
+  utter_greet:
+  - text: hey there! How may i help you
+  - text: Hi, How can I help you!
+  - text: Hey, How is it going, how may I help you Today?
+  utter_price_range:
+  - buttons:
+    - payload: low
+      title: Less than 300
+    - payload: mid
+      title: 300 to 700
+    - payload: high
+      title: More than 700
+    text: What is the price range you are looking for?
